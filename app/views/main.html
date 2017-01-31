@@ -1,0 +1,19 @@
+<div class="jumbotron">
+    <div >
+        <input type="file" onchange="angular.element(this).scope().uploadFiles(this)" multiple />
+        <ul>
+            <li ng-repeat="file in sheet.filenames track by $index">
+                <span style="font-size:20px">{{file.name}}</span>
+                <ul>
+                  <li ng-repeat="sheet in file.sheets track by $index">
+                      <span style="font:20px">{{sheet.sheetName}}</span><span style="margin-left:40px"> {{sheet.rowCount}}</span>
+                      
+                  </li>
+              </ul>
+            </li>
+        </ul>
+        <button ng-click="test()">PRINT</button>
+    </div>
+</div>
+
+
