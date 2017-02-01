@@ -1,19 +1,31 @@
 <div class="jumbotron">
-    <div >
-        <input type="file" onchange="angular.element(this).scope().uploadFiles(this)" multiple />
-        <ul>
-            <li ng-repeat="file in sheet.filenames track by $index">
-                <span style="font-size:20px">{{file.name}}</span>
-                <ul>
-                  <li ng-repeat="sheet in file.sheets track by $index">
-                      <span style="font:20px">{{sheet.sheetName}}</span><span style="margin-left:40px"> {{sheet.rowCount}}</span>
-                      
-                  </li>
-              </ul>
-            </li>
-        </ul>
-        <button ng-click="test()">PRINT</button>
+    <div style="margin-bottom:20px">
+        <div class="row">
+            <div class="col-md-6">
+                <input id="uploadFiles" type="file" onchange="angular.element(this).scope().uploadFiles(this)" multiple />        
+            </div>
+            
+            <div class="col-md-6 ">
+                
+                <button class="btn btn-info pull-right" ng-csv="sheet.filenames" csv-header="['Sheet Name', 'Row Count']"filename="sheet_details.csv">Export</a></button>
+                <button class="btn btn-danger pull-right" style="margin-right:20px" ng-click="clearData()">Clear</a></button>
+            </div>
+        </div>
     </div>
+    <table class="table table-sm header-fixed table-bordered">
+        <thead>
+            <tr>
+                <th class="col-md-6" >Sheet Name </th>
+                <th class="col-md-6">Row Count</th>
+            </tr>
+        </thead>
+        <tbody >
+            <tr ng-repeat="file in sheet.filenames track by $index" >
+                <td class="col-md-6">{{file.name}}</td>
+                <td class="col-md-2">{{file.rowCount}}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 
 

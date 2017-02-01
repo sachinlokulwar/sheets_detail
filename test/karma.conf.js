@@ -29,6 +29,8 @@ module.exports = function(config) {
       'bower_components/bootstrap/dist/js/bootstrap.js',
       'bower_components/jszip/dist/jszip.js',
       'bower_components/js-xlsx/dist/xlsx.js',
+      'bower_components/angular-sanitize/angular-sanitize.js',
+      'bower_components/ng-csv/build/ng-csv.min.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

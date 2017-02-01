@@ -12,7 +12,8 @@ angular
   .module('csvRowsApp', [
     'ngCookies',
     'ngRoute',
-    'ngTouch'
+    'ngTouch',
+    'ngCsv'
   ])
   .config(function ($routeProvider) {
     $routeProvider
